@@ -84,3 +84,6 @@ used to work with std::vector and other container types.
 # 10. Randomization
 - std::shuffle: Randomly shuffles the elements in a range.
 - std::random_shuffle (deprecated in C++14 and removed in C++17): Randomly shuffles elements in a range.
+
+# 11. Merge
+- std::merge(): assumes that both inpuits (vectors/list/array ec.) are already sorted.
