@@ -8,4 +8,5 @@
  8. Find median of a vector: Write a function to find the median of a std::vector. Assume the vector is sorted.
  9. Subarray with given sum: Write a function to find if there exists a contiguous subarray in a std::vector whose sum equals a given target sum.
 10. Kth largest element: Write a function to find the Kth largest element in a std::vector.
+11. Find the length of longest-substring-without-repeating-characters in a string.
 
