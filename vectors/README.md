@@ -25,6 +25,20 @@
 
 12. Find the maximum sum of sub-array/vector in an array/vector. Sliding window.
 
+13. Count occurrences: Write a function to count occurrences of each element in an array.
+
+14. Leaders in array: Write a function to find all the leaders in an array. An element is called a leader if it is greater than all the elements to its right side.
+
+15. Find missing number: Write a function to find the missing number in a range from 1 to n in an array of size n-1.
+
+16. Longest increasing subsequence: Write a function to find the length of the longest increasing subsequence  in an array.
+
+17. Find majority element: Write a function to find the majority element in an array (element that appears more than n/2 times).
+
+18. Given 2 sorted arrays, find the number of elements common.
+
+19. Ransom Note problem.
+
 Sliding window based question:
 ------------------------------
 a) Longest Substring Without Repeating Characters
