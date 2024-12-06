@@ -34,6 +34,11 @@ int LRU::get(int key)
     return -1; // key not found in cache
 }
 
+/*
+ * For deque O(1), better to use the following:
+ * 1) int lru_key = dq.back();
+ * 2) dq.pop_back();
+ * */
 void LRU::put(int key, int value)
 {
     // check if 'key' already present, update its its value with 'value'
@@ -41,7 +46,7 @@ void LRU::put(int key, int value)
         cache[key].second = value;
         // get it and delete it from queue
         deque<int>::iterator it = cache[key].first;
-        dq.erase(it);
+        dq.erase(it); // O(n)
         dq.push_front(key); // update value
         cache[key].first = dq.begin(); // update new it
     } else if (cache.size() == capacity) {
