@@ -16,7 +16,7 @@ void rotateVector(std::vector<int> &vec, int k)
 
     std::copy(vec.begin(), vec.begin()+k, tmp.begin());
     std::copy(vec.begin()+k, vec.end(), vec.begin());
-    std::copy(tmp.begin(), tmp.begin()+k, vec.begin()+k);
+    std::copy(tmp.begin(), tmp.begin()+k, vec.end()-k);
 }
 
 int main(int argc, char *argv[])
