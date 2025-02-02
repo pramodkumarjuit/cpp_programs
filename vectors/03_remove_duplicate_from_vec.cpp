@@ -35,11 +35,12 @@ void removeDuplicates_u(std::vector<int>& vec) {
     std::vector<int> uniqueVec; // Vector to store unique elements
 
     for (auto &v: vec) {
-        if(seen.find(v) == seen.end()) {
+        if(seen.find(v) == seen.end()) { //O(1)
             seen.insert(v);
-            uniqueVec.push_back(v);
+            uniqueVec.push_back(v); // O(1)
         }
     }
+    // O(n)
 
     vec = std::move(uniqueVec);
 }
