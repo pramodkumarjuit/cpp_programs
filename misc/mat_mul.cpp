@@ -37,6 +37,26 @@ std::vector<std::vector<int>> matrxMultiplication(
     return result;
 }
 
+void transpose(std::vector<std::vector<int>> &matrix)
+{
+    int R = matrix.size();
+    int C = matrix[0].size();
+    std::vector<std::vector<int>> tpose(C, std::vector<int>(R));
+
+    for (int i = 0; i < R; i++) {
+        for (int j = 0; j < C; j++) {
+            tpose[j][i] = matrix[i][j];
+        }
+    }
+
+    std::cout << "****************\n";
+    std::cout << "Original Matrix:\n";
+    printVector(matrix);
+    std::cout << "Transpose:\n";
+    printVector(tpose);
+    std::cout << "****************\n";
+}
+
 int main(int argc, char *argv[])
 {
     int M,K,N;
@@ -81,5 +101,6 @@ int main(int argc, char *argv[])
     std::cout << "M1xM2= MxN\n";
     printVector(result);
 
+    transpose(M2);
     return 0;
 }
