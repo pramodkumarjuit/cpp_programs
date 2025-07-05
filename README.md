@@ -6,4 +6,4 @@ This repo has collections of C++ coding questions that cover a wide range of top
 Git Command:
 - git clone https://github.com/pramodkumarjuit/cpp_programs.git
 - git commit -a -m "Commit msg"
-- git push origin
+- git push origin main
