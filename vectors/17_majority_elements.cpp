@@ -15,6 +15,7 @@ int fun(vector<int> &nums)
     for (auto &e: nums) {
         if (count == 0) {
             candidate = e;
+            count++;
         } else if (candidate == e) {
             count++;
         } else {
@@ -28,7 +29,7 @@ int fun(vector<int> &nums)
         if (e == candidate) count++;
     }
 
-    if (count >= nums.size()/2) {
+    if (count > nums.size()/2) {
         return candidate;
     } else {
         return -1;
