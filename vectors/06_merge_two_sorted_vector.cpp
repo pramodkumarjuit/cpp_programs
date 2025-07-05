@@ -17,54 +17,35 @@ void mergeSortedVector_opt(vector<T> &vec1, vector<T> &vec2, vector<T> &res)
     std::merge(vec1.begin(), vec1.end(), vec2.begin(), vec2.end(), res.begin());
 }
 
-
+// result should be in vec1 only
 template <typename T>
-void mergeSortedVector_manual(vector<T> &vec1, vector<T> &vec2, vector<T> &res)
+void mergeSortedVector_manual(vector<T> &vec1, vector<T> &vec2)
 {
-    auto itr1 = vec1.begin();
-    auto itr2 = vec2.begin();
-    auto itr3 = res.begin();
-    int i = 0, j = 0, k = 0;
+    // if second vector is empty
+    if(vec2.begin() == vec2.end()) {
+        return;
+    }
 
     // if first vector is empty
     if(vec1.begin() == vec1.end()) {
-        copy(vec2.begin(), vec2.end(), res.begin());
-        return;
-    }
-    // if second vector is empty
-    if(vec2.begin() == vec2.end()) {
-        copy(vec1.begin(), vec1.end(), res.begin());
+        vec1.resize(vec2.size());
+        copy(vec2.begin(), vec2.end(), vec1.begin());
         return;
     }
 
-    while (i < vec1.size() && j < vec2.size()) {
-        if (vec1[i] > vec2[j]) {
-            //res.push_back(vec2[j]); // it appends a new element
-            res[k] = vec2[j];
-            j++;
-        } else {
-            //res.push_back(vec1[i]);
-            res[k] = vec1[j];
-            i++;
-        }
-        k++;
-    }
+    int n1 = vec1.size();
+    int n2 = vec2.size();
 
-    // leftover if vec1
-    while(i < vec1.size()) {
-        //res.push_back(vec1[i]);
-        res[k] = vec1[j];
-        i++;
-        k++;
-    }
+    vec1.resize(n1+n2);
+    // Note:
+    //  - [] doesn't auto expand the vector memory! [] works only in pre-allocated memory
+    //  - Alternatively, use v1.push_back(i);
 
-    // leftover if vec2
-    while(j < vec2.size()) {
-        //res.push_back(vec2[j]);
-        res[k] = vec2[j];
-        j++;
-        k++;
+    for (int i = 0; i < n2; i++) {
+        vec1[n1+i] = vec2[i];
     }
+    std::sort(vec1.begin(), vec1.end());
+
 }
 
 int main(int argc, char *argv[])
@@ -88,10 +69,10 @@ int main(int argc, char *argv[])
 
     //mergeSortedVector(vec1, vec2, result);
     //mergeSortedVector_opt(vec1, vec2, result);
-    mergeSortedVector_manual(vec1, vec2, result);
-
+    
+    mergeSortedVector_manual(vec1, vec2);
     cout << "After merging two sorted vectors:\n";
-    for(auto &e: result) {
+    for(auto &e: vec1) {
         cout << e << " ";
     }
     cout << endl;
