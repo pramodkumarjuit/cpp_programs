@@ -17,6 +17,21 @@ void mergeSortedVector_opt(vector<T> &vec1, vector<T> &vec2, vector<T> &res)
     std::merge(vec1.begin(), vec1.end(), vec2.begin(), vec2.end(), res.begin());
 }
 
+/*
+how "std::vector<int>().swap(vec2)" free up vec2 memory?
+
+- std::vector<int>() creates a temporary empty vector (let's call it tmp).
+    - tmp.size() == 0
+    - tmp.capacity() == 0
+- .swap(v) exchanges the internal buffers of v and tmp:
+    - tmp now points to v’s original memory
+    - v now points to tmp's empty buffer (i.e., no memory allocated)
+
+- tmp goes out of scope immediately, since it was a temporary.
+    - Its destructor runs.
+    - The original memory (which was v's) is now owned by tmp — and is freed.
+*/
+
 // result should be in vec1 only
 template <typename T>
 void mergeSortedVector_manual(vector<T> &vec1, vector<T> &vec2)
@@ -30,6 +45,10 @@ void mergeSortedVector_manual(vector<T> &vec1, vector<T> &vec2)
     if(vec1.begin() == vec1.end()) {
         vec1.resize(vec2.size());
         copy(vec2.begin(), vec2.end(), vec1.begin());
+        // vec2 memory
+        std::vector<int>().swap(vec2);
+
+
         return;
     }
 
