@@ -36,6 +36,7 @@ int maxDepthBFS(TreeNode* root) {
 }
 
 // Function to find the depth of a binary tree using DFS (iterative)
+// *** Go deep down a branch before exploring siblings. ***
 int maxDepthDFS(TreeNode* root) {
     if (!root) return 0;
 
