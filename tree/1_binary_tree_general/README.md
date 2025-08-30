@@ -1,17 +1,17 @@
-- Maximum Depth of Binary Tree:  Easy
-- Same Tree: Easy
-- Invert Binary Tree: Easy
-- Symmetric Tree: Easy
-- Construct Binary Tree from Preorder and Inorder Traversal: Medium
-- Construct Binary Tree from Inorder and Postorder Traversal: Medium
-- Populating Next Right Pointers in Each Node II : Medium
-- Flatten Binary Tree to Linked List: Medium
-- Path Sum: Easy
-- Sum Root to Leaf Numbers: Medium
-- Binary Tree Maximum Path Sum: Hard
-- Binary Search Tree Iterator: Medium
-- Count Complete Tree Nodes: Easy
-- Lowest Common Ancestor of a Binary Tree: Medium
+ 1. Maximum Depth of Binary Tree:  Easy
+ 2. Same Tree: Easy
+ 3. Invert Binary Tree: Easy
+ 4. Symmetric Tree: Easy
+ 5. Construct Binary Tree from Preorder and Inorder Traversal: Medium
+ 6. Construct Binary Tree from Inorder and Postorder Traversal: Medium
+ 7. Populating Next Right Pointers in Each Node II : Medium
+ 8. Flatten Binary Tree to Linked List: Medium
+ 9. Path Sum: Easy
+10. Sum Root to Leaf Numbers: Medium
+11. Binary Tree Maximum Path Sum: Hard
+12. Binary Search Tree Iterator: Medium
+13. Count Complete Tree Nodes: Easy
+14. Lowest Common Ancestor of a Binary Tree: Medium
 
 
 | DFS Traversal | What it means (for a node `N`)     | Example Order | Underlying Search Method
