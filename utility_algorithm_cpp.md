@@ -2,10 +2,15 @@ List of utility functions and algorithms in the C++ Standard Library that can be
 used to work with std::vector and other container types.
 -------------------------------------------------------------------------------
 
-
-
 # 1. Sorting and Permutations
 - std::sort: Sorts the elements in a range.
+  IMP: What is inside std::sort()?
+       In C++, std::sort() is usually implemented using Introsort:
+       - A hybrid of Quicksort + Heapsort + Insertion Sort.
+       - Worst case → O(n log n)
+       - Average case → O(n log n)
+       - So for any array of size k, std::sort() has time complexity:𝑂(𝑘log𝑘)
+
 - std::stable_sort: Sorts the elements in a range while preserving the relative order of equivalent elements.
 - std::partial_sort: Partially sorts the elements in a range.
 - std::nth_element: Rearranges the elements in such a way that the element at the nth position is the element that would be in that position in a sorted sequence.
