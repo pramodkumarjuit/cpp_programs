@@ -13,6 +13,12 @@
 
 // num1 has already extra space
 
+/**************************************************************
+ * Time Complexity of : mergeSortedVector()
+ *                      O(m+n)
+ * Note: With vector num1,num2; std::copy() & std::sort()
+ *       can be used but it will result into O((m+n)log(m+n))
+ ***************************************************************/
 #include<iostream>
 
 using namespace std;
